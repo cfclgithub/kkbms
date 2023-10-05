@@ -1,0 +1,16 @@
+.green {
+    background-color: #778899;
+}
+.red {
+    background-color: #FF3300;
+}
+.yellow {
+    background-color: #FFFF66;
+}
+.hoverEffect:hover {
+    border: 1.2px solid #0070f2;
+    box-shadow: 0 0 2px #009cd9;
+    transform: scale(0.98, 0.98);
+    width: calc(3% + 2px);
+    margin: calc(0.1% - 1px);
+}

@@ -1,0 +1,74 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:m="sap.m" xmlns:ui="sap.ui.table" xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:l="sap.ui.layout" xmlns:f="sap.f" xmlns:card="sap.f.cards" xmlns:core="sap.ui.core"
+    xmlns:html="http://www.w3.org/1999/xhtml">
+    <f:Card class="hoverEffect">
+        <f:header>
+            <card:Header title="Vendors Quoted" iconSrc="sap-icon://accounting-document-verification">
+                <card:toolbar>
+                    <Button icon="sap-icon://download" tooltip="Click here to export" press="onExcelExport" />
+                </card:toolbar>
+            </card:Header>
+        </f:header>
+        <f:content>
+            <ScrollContainer vertical="true">
+                <Table items="{nfaModel>/vendorDetails}">
+                    <columns>
+                        <Column>
+                            <Text text="Sr.No" />
+                        </Column>
+                        <Column>
+                            <Text text="Name" />
+                        </Column>
+                        <Column hAlign="Right">
+                            <Text text="Final Evaluated Price with Taxes(In.Rs)" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{nfaModel>index}" />
+                                <Text text="{nfaModel>vendorName}" />
+                                <Text text="{path:'nfaModel>totalAmount',formatter: '.formatter.formatAmount'}" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </ScrollContainer>
+        </f:content>
+    </f:Card>
+    <f:Card class="hoverEffect sapUiTinyMarginTop">
+        <f:header>
+            <card:Header title="Vendors Non Quoted" iconSrc="sap-icon://accounting-document-verification">
+                <card:toolbar>
+                    <Button icon="sap-icon://download" tooltip="Click here to export" press="onExcelExport" />
+                </card:toolbar>
+            </card:Header>
+        </f:header>
+        <f:content>
+            <ScrollContainer vertical="true">
+                <Table items="{worklistView>/nonQoutedVendors}">
+                    <columns>
+                        <Column>
+                            <Text text="Sr.No" />
+                        </Column>
+                        <Column>
+                            <Text text="Name" />
+                        </Column>
+                        <Column hAlign="Right">
+                            <Text text="Final Evaluated Price with Taxes(In.Rs)" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{worklistView>slno}" />
+                                <Text text="{worklistView>vendorName}" />
+                                <Text text="{path:'worklistView>price',formatter: '.formatter.formatAmount'}" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </ScrollContainer>
+        </f:content>
+    </f:Card>
+</core:FragmentDefinition>

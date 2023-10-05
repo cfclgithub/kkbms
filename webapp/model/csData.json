@@ -1,0 +1,22 @@
+{
+    "columnData":[
+        {
+            "columnName": "High level information"
+        },
+        {
+            "columnName": "Currency"
+        },
+        {
+            "columnName": "Vendor1"
+        },
+        {
+            "columnName": "Currency"
+        },
+        {
+            "columnName": "Vendor2"
+        }
+    ],
+    "rowData":[
+
+    ]
+}

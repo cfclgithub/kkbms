@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="ComparativeAnalysisService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="ConfigValues" EntityType="ComparativeAnalysisService.ConfigValues"/>
+                <EntitySet Name="RFQList" EntityType="ComparativeAnalysisService.RFQList">
+                    <NavigationPropertyBinding Path="rfqEvents" Target="RFQEvents"/>
+                </EntitySet>
+                <EntitySet Name="RFQEvents" EntityType="ComparativeAnalysisService.RFQEvents">
+                    <NavigationPropertyBinding Path="Ebeln" Target="RFQList"/>
+                </EntitySet>
+                <ActionImport Name="updateRFQList" Action="ComparativeAnalysisService.updateRFQList"/>
+                <ActionImport Name="stageEvents" Action="ComparativeAnalysisService.stageEvents"/>
+            </EntityContainer>
+            <EntityType Name="ConfigValues">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                    <PropertyRef Name="entryId"/>
+                </Key>
+                <Property Name="createdAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="createdBy" Type="Edm.String" MaxLength="255"/>
+                <Property Name="modifiedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="modifiedBy" Type="Edm.String" MaxLength="255"/>
+                <Property Name="ID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="entryId" Type="Edm.String" Nullable="false"/>
+                <Property Name="entryValue" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="RFQList">
+                <Key>
+                    <PropertyRef Name="Ebeln"/>
+                </Key>
+                <Property Name="createdAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="createdBy" Type="Edm.String" MaxLength="255"/>
+                <Property Name="modifiedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="modifiedBy" Type="Edm.String" MaxLength="255"/>
+                <Property Name="Ebeln" Type="Edm.String" Nullable="false"/>
+                <Property Name="isEventSynced" Type="Edm.Boolean"/>
+                <NavigationProperty Name="rfqEvents" Type="Collection(ComparativeAnalysisService.RFQEvents)" Partner="Ebeln"/>
+            </EntityType>
+            <EntityType Name="RFQEvents">
+                <Key>
+                    <PropertyRef Name="internalId"/>
+                    <PropertyRef Name="Ebeln_Ebeln"/>
+                </Key>
+                <Property Name="createdAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="createdBy" Type="Edm.String" MaxLength="255"/>
+                <Property Name="modifiedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="modifiedBy" Type="Edm.String" MaxLength="255"/>
+                <Property Name="internalId" Type="Edm.String" Nullable="false"/>
+                <NavigationProperty Name="Ebeln" Type="ComparativeAnalysisService.RFQList" Partner="rfqEvents">
+                    <ReferentialConstraint Property="Ebeln_Ebeln" ReferencedProperty="Ebeln"/>
+                </NavigationProperty>
+                <Property Name="Ebeln_Ebeln" Type="Edm.String" Nullable="false"/>
+                <Property Name="title" Type="Edm.String"/>
+                <Property Name="status" Type="Edm.String"/>
+            </EntityType>
+            <Action Name="updateRFQList" IsBound="false">
+                <ReturnType Type="Edm.String"/>
+            </Action>
+            <Action Name="stageEvents" IsBound="false">
+                <Parameter Name="rfq" Type="Edm.String"/>
+                <ReturnType Type="Edm.String"/>
+            </Action>
+            <Annotations Target="ComparativeAnalysisService.ConfigValues/createdAt">
+                <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                <Annotation Term="Core.Immutable" Bool="true"/>
+                <Annotation Term="Core.Computed" Bool="true"/>
+                <Annotation Term="Common.Label" String="Created On"/>
+            </Annotations>
+            <Annotations Target="ComparativeAnalysisService.ConfigValues/createdBy">
+                <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                <Annotation Term="Core.Immutable" Bool="true"/>
+                <Annotation Term="Core.Computed" Bool="true"/>
+                <Annotation Term="Core.Description" String="User's unique ID"/>
+                <Annotation Term="Common.Label" String="Created By"/>
+            </Annotations>
+            <Annotations Target="ComparativeAnalysisService.ConfigValues/modifiedAt">
+                <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                <Annotation Term="Core.Computed" Bool="true"/>
+                <Annotation Term="Common.Label" String="Changed On"/>
+            </Annotations>
+            <Annotations Target="ComparativeAnalysisService.ConfigValues/modifiedBy">
+                <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                <Annotation Term="Core.Computed" Bool="true"/>
+                <Annotation Term="Core.Description" String="User's unique ID"/>
+                <Annotation Term="Common.Label" String="Changed By"/>
+            </Annotations>
+            <Annotations Target="ComparativeAnalysisService.RFQList/createdAt">
+                <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                <Annotation Term="Core.Immutable" Bool="true"/>
+                <Annotation Term="Core.Computed" Bool="true"/>
+                <Annotation Term="Common.Label" String="Created On"/>
+            </Annotations>
+            <Annotations Target="ComparativeAnalysisService.RFQList/createdBy">
+                <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                <Annotation Term="Core.Immutable" Bool="true"/>
+                <Annotation Term="Core.Computed" Bool="true"/>
+                <Annotation Term="Core.Description" String="User's unique ID"/>
+                <Annotation Term="Common.Label" String="Created By"/>
+            </Annotations>
+            <Annotations Target="ComparativeAnalysisService.RFQList/modifiedAt">
+                <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                <Annotation Term="Core.Computed" Bool="true"/>
+                <Annotation Term="Common.Label" String="Changed On"/>
+            </Annotations>
+            <Annotations Target="ComparativeAnalysisService.RFQList/modifiedBy">
+                <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                <Annotation Term="Core.Computed" Bool="true"/>
+                <Annotation Term="Core.Description" String="User's unique ID"/>
+                <Annotation Term="Common.Label" String="Changed By"/>
+            </Annotations>
+            <Annotations Target="ComparativeAnalysisService.RFQEvents/createdAt">
+                <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                <Annotation Term="Core.Immutable" Bool="true"/>
+                <Annotation Term="Core.Computed" Bool="true"/>
+                <Annotation Term="Common.Label" String="Created On"/>
+            </Annotations>
+            <Annotations Target="ComparativeAnalysisService.RFQEvents/createdBy">
+                <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                <Annotation Term="Core.Immutable" Bool="true"/>
+                <Annotation Term="Core.Computed" Bool="true"/>
+                <Annotation Term="Core.Description" String="User's unique ID"/>
+                <Annotation Term="Common.Label" String="Created By"/>
+            </Annotations>
+            <Annotations Target="ComparativeAnalysisService.RFQEvents/modifiedAt">
+                <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                <Annotation Term="Core.Computed" Bool="true"/>
+                <Annotation Term="Common.Label" String="Changed On"/>
+            </Annotations>
+            <Annotations Target="ComparativeAnalysisService.RFQEvents/modifiedBy">
+                <Annotation Term="UI.HiddenFilter" Bool="true"/>
+                <Annotation Term="Core.Computed" Bool="true"/>
+                <Annotation Term="Core.Description" String="User's unique ID"/>
+                <Annotation Term="Common.Label" String="Changed By"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

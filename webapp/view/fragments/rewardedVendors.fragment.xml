@@ -1,0 +1,26 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:m="sap.m" xmlns:ui="sap.ui.table" xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:l="sap.ui.layout" xmlns:f="sap.f" xmlns:card="sap.f.cards" xmlns:core="sap.ui.core"
+    xmlns:html="http://www.w3.org/1999/xhtml">
+    <f:Card class="hoverEffect">
+        <f:header>
+            <card:Header title="Vendors" subtitle="Rewarded"
+                iconSrc="sap-icon://accounting-document-verification">
+                <card:toolbar>
+                    <Button icon="sap-icon://download" tooltip="Click here to export" press="onExcelExport" />
+                </card:toolbar>
+            </card:Header>
+        </f:header>
+        <f:content>
+            <ScrollContainer vertical="true">
+                <ui:Table id="idUITableRewaredVendor" rows="{sJSONModelRewarded>/result}" selectionMode="MultiToggle"
+                    visibleRowCount="5" ariaLabelledBy="title">
+                    <ui:extension>
+                        <OverflowToolbar style="Clear">
+                            <Title text="Rewarded Vendor" />
+                        </OverflowToolbar>
+                    </ui:extension>
+                </ui:Table>
+            </ScrollContainer>
+        </f:content>
+    </f:Card>
+</core:FragmentDefinition>

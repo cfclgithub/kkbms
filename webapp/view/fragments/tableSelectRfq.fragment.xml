@@ -1,0 +1,21 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		id="myRfqSelectDialog"
+		noDataText="No RFQ's Found"
+		title="Select RFQ"
+		search=".handleSearchRfq"
+		confirm=".onConfirmRqfDialog">
+        <items>
+        	<StandardListItem
+			title="{Ebeln}"
+			description="{Department}"
+			type="Active" />
+        </items>
+        <!-- items="{
+			path: '/RFQList', filters: [{path: 'Department', operator: 'EQ', value1: 'Purchase'}]
+		}" -->
+	
+	</SelectDialog>
+</core:FragmentDefinition>

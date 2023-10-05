@@ -1,0 +1,37 @@
+<core:FragmentDefinition
+	xmlns="sap.ui.comp.valuehelpdialog"
+	xmlns:m="sap.m"
+	xmlns:fb="sap.ui.comp.filterbar"
+	xmlns:core="sap.ui.core">
+	<ValueHelpDialog
+		title="RFQ List"
+		ok=".onValueHelpOkPressRFQ"
+		cancel=".onValueHelpCancelPressRFQ"
+		supportRanges="false"
+		key="Ebeln">
+		<filterBar>
+			<fb:FilterBar advancedMode="true" search=".onFilterBarRfqSearch" isRunningInValueHelpDialog="true">
+				<fb:filterGroupItems>
+					<fb:FilterGroupItem
+						groupName="__$INTERNAL$"
+						name="Ebeln"
+						label="RFQ Number"
+						visibleInFilterBar="true">
+						<fb:control>
+							<m:Input name="Ebeln" />
+						</fb:control>
+					</fb:FilterGroupItem>
+					<fb:FilterGroupItem
+						groupName="__$INTERNAL$"
+						name="isEventSynced"
+						label="Is Event Synced"
+						visibleInFilterBar="true">
+						<fb:control>
+							<m:Input name="isEventSynced" />
+						</fb:control>
+					</fb:FilterGroupItem>
+				</fb:filterGroupItems>
+			</fb:FilterBar>
+		</filterBar>
+	</ValueHelpDialog>
+</core:FragmentDefinition>

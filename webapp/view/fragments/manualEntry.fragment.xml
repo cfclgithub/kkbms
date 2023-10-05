@@ -1,0 +1,81 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:m="sap.m" xmlns:ui="sap.ui.table" xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:l="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:rte="sap.ui.richtexteditor"
+    xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f1="sap.f" xmlns:card="sap.f.cards">
+    <f1:Card class="hoverEffect sapUiTinyMarginTop">
+        <f1:header>
+            <card:Header title="RFQ Details" iconSrc="sap-icon://accounting-document-verification">
+            </card:Header>
+        </f1:header>
+        <f1:content>
+            <form:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4"
+                labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0"
+                emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false">
+                <form:content>
+                    <core:Title />
+                    <Label text="Enquiry Number" />
+                    <Input value="{nfaModel>/Ebeln}" editable="false" />
+                    <Label text="Run Date" />
+                    <Input value="{path: 'nfaModel>/RunDate', formatter: '.formatter.formatDate'}" editable="false" />
+                    <Label text="RFQ Date" />
+                    <Input value="{path: 'nfaModel>/RFQDate', formatter: '.formatter.formatDate'}" editable="false" />
+                    <Label text="{i18n>commercialtechbidding}" class="sapUiTinyMarginBegin" />
+                    <Input value="{path: 'nfaModel>/TechBidOpening', formatter: '.formatter.formatDate'}"
+                        editable="false" />
+                    <Label text="Basis" />
+                    <Input value="{nfaModel>/Basis}" />
+                    <core:Title />
+                    <Label text="PR Release Date" />
+                    <Input value="{path: 'nfaModel>/IndentReleaseDate', formatter: '.formatter.formatDate'}"
+                        editable="false" />
+                    <Label text="WBS Number" />
+                    <Text text="{nfaModel>/CategoryWBS}" />
+                    <Label text="Budget Amount" />
+                    <Input enabled="false" value="{nfaModel>/BudgetAmount}" />
+                    <Label  text="Budget Utilized" />
+                    <Input value="{nfaModel>/BudgetUtilized}" />
+                    <Label  text="WBS Description" />
+                    <Text text="{nfaModel>/WBSDescription}" />
+                    <Label text="Under Chapter of Loam" />
+                    <Input value="{nfaModel>/UnderChapterofLoam}" />
+                </form:content>
+            </form:SimpleForm>
+        </f1:content>
+    </f1:Card>
+    <f1:Card class="hoverEffect sapUiTinyMarginTop">
+        <f1:header>
+            <card:Header title="Subject" iconSrc="sap-icon://accounting-document-verification">
+            </card:Header>
+        </f1:header>
+        <f1:content>
+
+            <rte:RichTextEditor editorType="TinyMCE" width="100%" height="15rem" customToolbar="false"
+                showGroupFont="true" showGroupLink="true" showGroupInsert="true" value="{nfaModel>/Subject}">
+            </rte:RichTextEditor>
+            <!-- <TextArea id="textAreaWithBinding2" value="{nfaModel>/Subject}" showExceededText="true" maxLength="40"
+                    width="100%" valueLiveUpdate="false" liveChange="handleLiveChange" /> -->
+
+        </f1:content>
+    </f1:Card>
+    <f1:Card class="hoverEffect sapUiTinyMarginTop">
+        <f1:header>
+            <card:Header title="Justification" iconSrc="sap-icon://accounting-document-verification">
+            </card:Header>
+        </f1:header>
+        <f1:content>
+            <rte:RichTextEditor editorType="TinyMCE" width="100%" height="15rem" customToolbar="false"
+                showGroupFont="true" showGroupLink="true" showGroupInsert="true" value="{nfaModel>/Justification}">
+            </rte:RichTextEditor>
+        </f1:content>
+    </f1:Card>
+    <f1:Card class="hoverEffect sapUiTinyMarginTop">
+        <f1:header>
+            <card:Header title="Terms of payment" iconSrc="sap-icon://accounting-document-verification">
+            </card:Header>
+        </f1:header>
+        <f1:content>
+            <rte:RichTextEditor editorType="TinyMCE" width="100%" height="15rem" customToolbar="false"
+                showGroupFont="true" showGroupLink="true" showGroupInsert="true" value="{nfaModel>/TermsofPayment}">
+            </rte:RichTextEditor>
+        </f1:content>
+    </f1:Card>
+</core:FragmentDefinition>

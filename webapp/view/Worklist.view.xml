@@ -1,0 +1,66 @@
+<mvc:View controllerName="com.cfcl.comparativeanalysisui.controller.Worklist" xmlns="sap.m" xmlns:m="sap.m"
+	xmlns:f="sap.f" xmlns:fb="sap.ui.comp.filterbar" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:ui="sap.ui.table" xmlns:l="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:semantic="sap.f.semantic"
+	xmlns:rte="sap.ui.richtexteditor">
+
+	<Page showFooter="true" title="{i18n>worklistTitle}" titleAlignment="Center">
+		<content>
+			<fb:FilterBar id="filterbar" reset="onReset" search="onGoButtonPress" useToolbar="true" showGoOnFB="true">
+				<fb:filterItems>
+					<fb:FilterItem name="A" label="{i18n>selectRfqNumber}">
+						<fb:control>
+							<Input id="idInputRFQNumber" width="60%" valueHelpRequest=".onValueHelpRequestedRfq"
+								showValueHelp="true" valueHelpOnly="true">
+							</Input>
+						</fb:control>
+					</fb:FilterItem>
+					<fb:FilterItem label="{i18n>selectEvent}" name="internalId" visibleInFilterBar="true">
+						<fb:control>
+							<!-- <Input  id="idInputEvent"
+												width="60%"
+												valueHelpRequest=".onValueHelpRequestedEvent"
+												showValueHelp="true"
+												valueHelpOnly="true">
+											</Input> -->
+							<MultiInput id="idInputEvent" valueHelpRequest=".onValueHelpRequestedEvent">
+							</MultiInput>
+						</fb:control>
+					</fb:FilterItem>
+				</fb:filterItems>
+			</fb:FilterBar>
+			<IconTabBar id="idIconTabBarNoIcons" expanded="{device>/isNoPhone}" class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter text="Analysis" key="Analysis">
+						<core:Fragment type="XML"
+							fragmentName="com.cfcl.comparativeanalysisui.view.fragments.purchase" />
+					</IconTabFilter>
+
+					<IconTabFilter text="Rewarded Vendors" key="Rewarded Vendors">
+						<core:Fragment type="XML"
+							fragmentName="com.cfcl.comparativeanalysisui.view.fragments.rewardedVendors" />
+					</IconTabFilter>
+					<IconTabFilter text="Quoted/Non Qouted Vendors" key="Quoted/Non Qouted Vendors">
+						<core:Fragment type="XML"
+							fragmentName="com.cfcl.comparativeanalysisui.view.fragments.vendors" />
+					</IconTabFilter>
+					<IconTabFilter text="Template" key="Template">
+						<core:Fragment type="XML"
+							fragmentName="com.cfcl.comparativeanalysisui.view.fragments.manualEntry" />
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+		<footer>
+			<OverflowToolbar>
+				<Button text="Save PDF Details" press="_handleSavePDFDetails" />
+				<Button type="Emphasized" text="Sync RFQ's" icon="sap-icon://synchronize" press="_handlePressSyncRfq" />
+				<Button type="Emphasized" text="Sync Events" icon="sap-icon://synchronize"
+					press="_handlePressSyncEvents" />
+				<Button type="Emphasized" text="Sync EventItems" icon="sap-icon://synchronize"
+					press="_handlePressSyncEventItems" />
+				<ToolbarSpacer />
+				<Button text="Print" press="onPrintPress" icon="sap-icon://print" />
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

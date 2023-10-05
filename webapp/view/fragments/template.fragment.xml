@@ -1,0 +1,57 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:m="sap.m"
+	xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	
+  <Dialog title="Create PDF Template" contentWidth = "80%" contentHeight = "100%" class="sapUiSizeCompact">  
+  <content>
+		<f:SimpleForm
+			editable="true"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="4"
+			labelSpanL="4"
+			labelSpanM="12"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="0"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="2"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+            <core:Title/>
+				<Label text="Enquiry Number" />
+				<Text text = "0010112356"/>				
+				<Label text="Run Date" />
+                <Text text = "10.10.2022"/>
+                <Label text="RFQ Date" />
+				<Text text = "27.09.2022"/>
+                 <core:Title/>
+				<Label text="Tech Bid Opening" class="sapUiTinyMarginBegin"/>
+                <Text text = "30.09.2022"/>
+                <Label text="PR Release Date" />
+				<Text text = "01.07.2022"/>
+			</f:content>
+		</f:SimpleForm>
+		<l:VerticalLayout class="sapUiContentPadding" width="100%">
+		<Text text="Subject" class="sapUiTinyMarginTop"/>
+		<TextArea id="textAreaWithBinding2" value="PROCUREMENT OF SPARES OF BHDT VALVE AGAINST REACTOR DRAIN 1ST I/V KNOCKOUT HOLE LEAKAGE IN BOTH TRAINS IN UREA-3" showExceededText="true" maxLength="40" width="100%"  valueLiveUpdate="false" liveChange="handleLiveChange" />
+		<Text text="Justification" class="sapUiTinyMarginTop"/>
+		<TextArea id="textAreaWithoutBinding" value="" showExceededText="true" maxLength="40" width="100%" liveChange="handleLiveChange" valueLiveUpdate="true"/>
+		<!-- <Text text="showExceededText = false;" class="sapUiTinyMarginTop"/>
+		<TextArea value="Lorem ipsum dolor sit amet, consectetur el" maxLength="40" width="100%"/> -->
+	</l:VerticalLayout>
+	</content>
+	<!-- <footer>
+	<Button design="Emphasized" click=".handleClose" text="Close"
+		class="sapUiTinyMarginTop sapUiTinyMarginBottom" />
+    </footer> -->
+  </Dialog>  
+</core:FragmentDefinition>

@@ -1,0 +1,161 @@
+<mvc:View
+    controllerName="com.cfcl.comparativeanalysisui.controller.Object"
+  	height="100%"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:layout="sap.ui.layout"
+	xmlns:semantic="sap.f.semantic"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    <!-- <Title level="H3" text="REQ Number - " class="sapUiResponsiveMargin" />
+    <Panel expandable="true" headerText="Select Event" width="auto" class="sapUiResponsiveMargin">
+        <t:Table
+				rows="{/rfqEvents}"
+				selectionMode="MultiToggle"
+				visibleRowCount="7"
+				paste="onPaste"
+				ariaLabelledBy="title">
+				<t:extension>
+					<OverflowToolbar style="Clear">
+						<Title id="title" text="Products"/>
+					</OverflowToolbar>
+				</t:extension>
+				<t:columns>
+					<t:Column width="11rem">
+						<Label text="Event Id" />
+						<t:template>
+							<Text text="{internalId}" wrapping="false" />
+						</t:template>
+					</t:Column>
+                    <t:Column width="11rem">
+						<Label text="Title" />
+						<t:template>
+							<Text text="{title}" wrapping="false" />
+						</t:template>
+					</t:Column>
+                    <t:Column width="11rem">
+						<Label text="Status" />
+						<t:template>
+							<Text text="{status}" wrapping="false" />
+						</t:template>
+					</t:Column>
+                </t:columns>
+        </t:Table>
+    </Panel>
+    <Panel expandable="true" headerText="Comparision" width="auto" class="sapUiResponsiveMargin">
+		<t:Table class="sapUiSizeCompact" selectionMode="None" visibleRowCount="12" rowActionCount="1"
+			fixedRowCount="1" fixedBottomRowCount="1" fixedColumnCount="3"
+			columns="{path: 'csModel>/columnData', factory: '.CSColumnFactory'}" rows="{csModel>/rowData}"></t:Table>
+    </Panel> -->
+	<semantic:SemanticPage
+		id="mySemanticPage"
+		headerPinnable="true"
+		toggleHeaderOnTitleClick="true"
+		preserveHeaderStateOnScroll="false"
+		titleAreaShrinkRatio="1:1.6:1.6"
+		showFooter="{/showFooter}">
+
+		<!-- Title Heading-->
+		<semantic:titleHeading>
+			<Title text="REQ Number" />
+		</semantic:titleHeading>
+
+		<!-- TitleExpanded content-->
+		<semantic:titleSnappedContent>
+			<Text text="{/Ebeln}"/>
+		</semantic:titleSnappedContent>
+
+		<!-- TitleSnapped content-->
+		<semantic:titleExpandedContent>
+			<Text text="{Ebeln}"/>
+		</semantic:titleExpandedContent>
+
+		<!-- Header Content -->
+		<semantic:headerContent>
+			<layout:HorizontalLayout allowWrapping="true">
+				<!-- <layout:VerticalLayout class="sapUiMediumMarginEnd">
+					<ObjectAttribute title="Functional Area" text="{/objectDescription/category}"/>
+					<ObjectAttribute title="Cost Center" text="{/objectDescription/center}"/>
+					<ObjectAttribute title="Email" text="{/objectDescription/email}"/>
+				</layout:VerticalLayout> -->
+
+				<layout:VerticalLayout>
+					<ObjectAttribute title="Is Event Synced"/>
+					<ObjectStatus text="{isEventSynced}" state="{/objectDescription/status}" />
+				</layout:VerticalLayout>
+			</layout:HorizontalLayout>
+		</semantic:headerContent>
+
+		<!-- Content -->
+		<semantic:content>
+			<Table
+				id="idEventsTable"
+				inset="false"
+				mode = "SingleSelectMaster"
+				items="{path:'/RFQEvents'}"
+				class="sapFSemanticPageAlignContent"
+				width="auto">
+
+				<columns>
+					<Column>
+						<Label text="Event Id" />
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Label text="Title" />
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Label text="Status" />
+					</Column>
+				</columns>
+
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="{internalId}" wrapping="false" />
+							<Text text="{title}" wrapping="false" />
+							<Text text="{status}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</semantic:content>
+
+		<!-- <semantic:titleMainAction>
+			<semantic:TitleMainAction id="editAction" text="Edit" press="onEdit"/>
+		</semantic:titleMainAction> -->
+
+		 <!--Semantic ShareMenu Buttons-->
+		<semantic:discussInJamAction>
+			<semantic:DiscussInJamAction />
+		</semantic:discussInJamAction>
+
+		<semantic:saveAsTileAction>
+			<Button icon= "sap-icon://add-favorite" text="Save as Tile"/>
+		</semantic:saveAsTileAction>
+
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction />
+		</semantic:sendEmailAction>
+
+		<semantic:sendMessageAction>
+			<semantic:SendMessageAction />
+		</semantic:sendMessageAction>
+
+		<!-- Semantic Footer Buttons -->
+		<semantic:footerMainAction>
+			<semantic:FooterMainAction text="Save" press="onSave"/>
+		</semantic:footerMainAction>
+
+		<semantic:footerCustomActions>
+			<Button id="cancelAction" text="Cancel" press="onCancel"/>
+		</semantic:footerCustomActions>
+
+		<semantic:messagesIndicator>
+			<semantic:MessagesIndicator press="onMessagesButtonPress"/>
+		</semantic:messagesIndicator>
+
+		<semantic:draftIndicator>
+			<DraftIndicator state="Saved"/>
+		</semantic:draftIndicator>
+
+	</semantic:SemanticPage>
+</mvc:View>

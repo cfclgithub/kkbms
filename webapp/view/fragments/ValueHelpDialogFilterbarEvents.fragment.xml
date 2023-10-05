@@ -1,0 +1,48 @@
+<core:FragmentDefinition
+	xmlns="sap.ui.comp.valuehelpdialog"
+	xmlns:m="sap.m"
+	xmlns:fb="sap.ui.comp.filterbar"
+	xmlns:core="sap.ui.core">
+	<ValueHelpDialog
+		title="Event List"
+		ok=".onValueHelpOkPressEvent"
+		cancel=".onValueHelpCancelPressEvent"
+		supportMultiselect="true"
+		supportRanges="false"
+		key="internalId" 
+		descriptionKey="title">
+		<filterBar>
+			<fb:FilterBar advancedMode="true" search=".onFilterBarEventSearch" isRunningInValueHelpDialog="true">
+				<fb:filterGroupItems>
+					<fb:FilterGroupItem
+						groupName="__$INTERNAL$"
+						name="internalId"
+						label="Event"
+						visibleInFilterBar="true">
+						<fb:control>
+							<m:Input name="internalId" />
+						</fb:control>
+					</fb:FilterGroupItem>
+					<fb:FilterGroupItem
+						groupName="__$INTERNAL$"
+						name="title"
+						label="Title"
+						visibleInFilterBar="true">
+						<fb:control>
+							<m:Input name="title" />
+						</fb:control>
+					</fb:FilterGroupItem>
+					<fb:FilterGroupItem
+						groupName="__$INTERNAL$"
+						name="status"
+						label="Status"
+						visibleInFilterBar="true">
+						<fb:control>
+							<m:Input name="status" />
+						</fb:control>
+					</fb:FilterGroupItem>
+				</fb:filterGroupItems>
+			</fb:FilterBar>
+		</filterBar>
+	</ValueHelpDialog>
+</core:FragmentDefinition>
