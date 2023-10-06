@@ -6,7 +6,7 @@ sap.ui.define([
 ], function (BaseController, JSONModel, History, formatter) {
     "use strict";
 
-    return BaseController.extend("com.cfcl.comparativeanalysisui.controller.Object", {
+    return BaseController.extend("com.cfcl.kkbms.controller.Object", {
 
         formatter: formatter,
 

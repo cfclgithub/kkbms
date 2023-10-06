@@ -1,7 +1,7 @@
 {
     "_version": "1.49.0",
     "sap.app": {
-        "id": "com.cfcl.comparativeanalysisui",
+        "id": "com.cfcl.kkbms",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
@@ -32,16 +32,16 @@
         },
         "crossNavigation": {
             "inbounds": {
-                "com-cfcl-comparativeanalysisui-inbound": {
+                "com-cfcl-kkbms-inbound": {
                     "signature": {
                         "parameters": {},
                         "additionalParameters": "allowed"
                     },
                     "semanticObject": "ComparativeAnalysis",
                     "action": "display",
-                    "title": "{{flpTitle}}",
-                    "subTitle": "{{flpSubtitle}}",
-                    "icon": "sap-icon://credit-card"
+                    "title": "Comparative Analysis - KKBMS",
+                    "subTitle": "Comparative Analysis - KKBMS",
+                    "icon": "sap-icon://journey-depart"
                 }
             }
         }
@@ -85,7 +85,7 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "com.cfcl.comparativeanalysisui.i18n.i18n"
+                    "bundleName": "com.cfcl.kkbms.i18n.i18n"
                 }
             },
             "": {
@@ -115,7 +115,7 @@
             "config": {
                 "routerClass": "sap.m.routing.Router",
                 "viewType": "XML",
-                "viewPath": "com.cfcl.comparativeanalysisui.view",
+                "viewPath": "com.cfcl.kkbms.view",
                 "controlId": "app",
                 "controlAggregation": "pages",
                 "bypassed": {
@@ -165,7 +165,7 @@
             }
         },
         "rootView": {
-            "viewName": "com.cfcl.comparativeanalysisui.view.App",
+            "viewName": "com.cfcl.kkbms.view.App",
             "type": "XML",
             "async": true,
             "id": "app"
@@ -173,6 +173,6 @@
     },
     "sap.cloud": {
         "public": true,
-        "service": "comcfclcomparativeanalysisui"
+        "service": "kkbms"
     }
 }

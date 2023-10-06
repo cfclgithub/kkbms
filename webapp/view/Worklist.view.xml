@@ -1,4 +1,4 @@
-<mvc:View controllerName="com.cfcl.comparativeanalysisui.controller.Worklist" xmlns="sap.m" xmlns:m="sap.m"
+<mvc:View controllerName="com.cfcl.kkbms.controller.Worklist" xmlns="sap.m" xmlns:m="sap.m"
 	xmlns:f="sap.f" xmlns:fb="sap.ui.comp.filterbar" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
 	xmlns:ui="sap.ui.table" xmlns:l="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns:semantic="sap.f.semantic"
 	xmlns:rte="sap.ui.richtexteditor">
@@ -32,20 +32,20 @@
 				<items>
 					<IconTabFilter text="Analysis" key="Analysis">
 						<core:Fragment type="XML"
-							fragmentName="com.cfcl.comparativeanalysisui.view.fragments.purchase" />
+							fragmentName="com.cfcl.kkbms.view.fragments.purchase" />
 					</IconTabFilter>
 
 					<IconTabFilter text="Rewarded Vendors" key="Rewarded Vendors">
 						<core:Fragment type="XML"
-							fragmentName="com.cfcl.comparativeanalysisui.view.fragments.rewardedVendors" />
+							fragmentName="com.cfcl.kkbms.view.fragments.rewardedVendors" />
 					</IconTabFilter>
 					<IconTabFilter text="Quoted/Non Qouted Vendors" key="Quoted/Non Qouted Vendors">
 						<core:Fragment type="XML"
-							fragmentName="com.cfcl.comparativeanalysisui.view.fragments.vendors" />
+							fragmentName="com.cfcl.kkbms.view.fragments.vendors" />
 					</IconTabFilter>
 					<IconTabFilter text="Template" key="Template">
 						<core:Fragment type="XML"
-							fragmentName="com.cfcl.comparativeanalysisui.view.fragments.manualEntry" />
+							fragmentName="com.cfcl.kkbms.view.fragments.manualEntry" />
 					</IconTabFilter>
 				</items>
 			</IconTabBar>

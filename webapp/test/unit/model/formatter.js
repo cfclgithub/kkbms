@@ -1,5 +1,5 @@
 sap.ui.define([
-"com/cfcl/comparativeanalysisui/model/formatter"
+"com/cfcl/kkbms/model/formatter"
 ], function (formatter) {
 	"use strict";
 

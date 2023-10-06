@@ -3,7 +3,7 @@ sap.ui.define([
 ], function(Opa5) {
 "use strict";
 
-return Opa5.extend("com.cfcl.comparativeanalysisui.test.integration.arrangements.Startup", {
+return Opa5.extend("com.cfcl.kkbms.test.integration.arrangements.Startup", {
 
 		/**
 		  * Initializes mock server, then starts the app component
@@ -21,7 +21,7 @@ return Opa5.extend("com.cfcl.comparativeanalysisui.test.integration.arrangements
 			// start the app UI component
 			this.iStartMyUIComponent({
 				componentConfig: {
-					name: "com.cfcl.comparativeanalysisui",
+					name: "com.cfcl.kkbms",
 					async: true
 				},
 				hash: oOptions.hash,

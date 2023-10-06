@@ -3,7 +3,7 @@ sap.ui.define([
 ], function (BaseController) {
     "use strict";
 
-    return BaseController.extend("com.cfcl.comparativeanalysisui.controller.NotFound", {
+    return BaseController.extend("com.cfcl.kkbms.controller.NotFound", {
 
         /**
          * Navigates to the worklist when the link is pressed

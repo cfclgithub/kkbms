@@ -1,5 +1,5 @@
 sap.ui.define([
-	"com/cfcl/comparativeanalysisui/model/models",
+	"com/cfcl/kkbms/model/models",
 	"sap/ui/Device"
 ], function (models, Device) {
 	"use strict";

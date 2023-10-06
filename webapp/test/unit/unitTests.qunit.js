@@ -5,7 +5,7 @@ sap.ui.getCore().attachInit(function () {
 	"use strict";
 
 	sap.ui.require([
-		"com/cfcl/comparativeanalysisui/test/unit/AllTests"
+		"com/cfcl/kkbms/test/unit/AllTests"
 	], function () {
 		QUnit.start();
 	});

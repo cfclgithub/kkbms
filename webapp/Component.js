@@ -6,7 +6,7 @@ sap.ui.define([
 ], function (UIComponent, Device, models, ErrorHandler) {
     "use strict";
 
-    return UIComponent.extend("com.cfcl.comparativeanalysisui.Component", {
+    return UIComponent.extend("com.cfcl.kkbms.Component", {
 
         metadata : {
             manifest: "json"

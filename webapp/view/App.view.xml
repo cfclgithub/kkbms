@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="com.cfcl.comparativeanalysisui.controller.App"
+    controllerName="com.cfcl.kkbms.controller.App"
     displayBlock="true"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc">

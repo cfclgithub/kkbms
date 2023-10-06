@@ -40,7 +40,7 @@ sap.ui.define([
 								"tileType": "sap.ushell.ui.tile.StaticTile",
 								"properties": {
 									"title": "Comparative Analysis",
-									"targetURL": "#comcfclcomparativeanalysisui-display"
+									"targetURL": "#kkbms-display"
 								}
 							}]
 						}]
@@ -51,8 +51,8 @@ sap.ui.define([
 				"adapter": {
 					"config": {
 						"inbounds": {
-							"comcfclcomparativeanalysisui-display": {
-								"semanticObject": "comcfclcomparativeanalysisui",
+							"kkbms-display": {
+								"semanticObject": "kkbms",
 								"action": "display",
 								"description": "Comparative Analysis",
 								"title": "Comparative Analysis",
@@ -61,8 +61,8 @@ sap.ui.define([
 								},
 								"resolutionResult": {
 									"applicationType": "SAPUI5",
-									"additionalInformation": "SAPUI5.Component=com.cfcl.comparativeanalysisui",
-									"url": sap.ui.require.toUrl("com/cfcl/comparativeanalysisui")
+									"additionalInformation": "SAPUI5.Component=com.cfcl.kkbms",
+									"url": sap.ui.require.toUrl("com/cfcl/kkbms")
 								}
 							}
 						}

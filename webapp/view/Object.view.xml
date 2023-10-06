@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="com.cfcl.comparativeanalysisui.controller.Object"
+    controllerName="com.cfcl.kkbms.controller.Object"
   	height="100%"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m"
