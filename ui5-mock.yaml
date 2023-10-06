@@ -2,7 +2,7 @@
 
 specVersion: "2.5"
 metadata:
-  name: com.cfcl.comparativeanalysisui
+  name: com.cfcl.kkbms
 type: application
 server:
   customMiddleware:

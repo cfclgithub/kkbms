@@ -2,7 +2,7 @@
 
 specVersion: "2.5"
 metadata:
-  name: com.cfcl.comparativeanalysisui
+  name: com.cfcl.kkbms
 type: application
 server:
   customMiddleware:
@@ -28,5 +28,5 @@ server:
     - name: fiori-tools-preview
       afterMiddleware: fiori-tools-appreload
       configuration:
-        component: com.cfcl.comparativeanalysisui
+        component: com.cfcl.kkbms
         ui5Theme: sap_horizon

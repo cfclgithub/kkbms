@@ -8,7 +8,7 @@
 |**Template Used**<br>3worklistodatav4|
 |**Service Type**<br>SAP System (ABAP On Premise)|
 |**Service URL**<br>https://chambal-fertilisers---chemicals-limited-cfcl-dev-0ccbo7263a88f2.cfapps.us10-001.hana.ondemand.com/comparative-analysis
-|**Module Name**<br>comparativeanalysisui|
+|**Module Name**<br>kkbms|
 |**Application Title**<br>Comparative Analysis|
 |**Namespace**<br>com.cfcl|
 |**UI5 Theme**<br>sap_horizon|
@@ -20,7 +20,7 @@
 |**Object collection key**<br>Ebeln|
 |**Object ID**<br>isEventSynced|
 
-## comparativeanalysisui
+## kkbms
 
 Comparative Analysis
 
